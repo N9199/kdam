@@ -457,7 +457,7 @@ impl Bar {
         let rate = self.rate();
         if self.counter == 0 {
             format!("?{}/s", self.unit)
-        } else if rate < 1. {
+        } else if self.inverse_unit && rate < 1. {
             format!(
                 "{}/{}",
                 if self.unit_scale {
